@@ -1,0 +1,10 @@
+main:main.o print.o show.o
+	g++ -o main main.o print.o show.o
+main.o:main.cpp 
+	g++ -c main.cpp
+print.o:print.cpp
+	g++ -c print.cpp
+show.o:show.cpp
+	g++ -c show.cpp
+clean:
+	rm print.o main.o main show.o

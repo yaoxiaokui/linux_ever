@@ -1,0 +1,124 @@
+/*************************************************************************
+	> File Name: 163.cpp
+	> Author: 
+	> Mail: 
+	> Created Time: 2015年11月11日 星期三 13时55分16秒
+ ************************************************************************/
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+/*output the vector data*/
+struct myclass{
+    void operator() (int i){
+        cout << i << " ";
+    }  
+}myobject;
+
+/*recursion二分递归查找*/
+int binary_search_recursion(const vector<int> &v, int low, int high, int goal)
+{
+    if (low <= high){
+        int middle = (low + high) / 2;
+        if (goal == v[middle])
+            return middle;
+        else if (goal > v[middle])
+            binary_search_recursion(v, middle+1, high, goal);
+        else
+            binary_search_recursion(v, low, middle-1, goal);
+    }
+    else    
+        return -1;
+}
+
+void input_data(int *n, int *m, vector<int> &k)
+{
+    int val;
+    cout << "n = ";
+    cin >> *n;
+    cout << "m = ";
+    cin >> *m;
+    cout << "k = {";
+    for (int i = 0; i < *n; i++){
+        cin >> val;
+        k.push_back(val);
+        cin.get();
+        cin.get();
+    }
+}
+/*暴力枚举*/
+void solve_1(int n, int m, const vector<int> &k)
+{
+    for (int a = 0; a < n; a++)
+        for (int b = 0; b < n; b++)
+            for (int c = 0; c < n; c++)
+                 for (int d = 0; d < n; d++){
+                     if (k[a] + k[b] + k[c] + k[d] == m){
+                      
+  cout << "Yes" << endl;
+                        return;
+                     }
+                }
+
+    cout << "No" << endl;
+    return;
+}
+
+/*N^3*O(longN)*/
+void solve_2(int n, int m, const vector<int> &k)
+{
+
+    for (int a = 0; a < n; a++)
+        for (int b = 0; b < n; b++)
+            for (int c = 0; c < n; c++){
+                if (binary_search_recursion(k, 0, k.size()-1, m-k[a]-k[b]-k[c]) != -1){
+                    cout << "Yes" << endl;
+                    return;
+                }
+            }
+
+    cout << "No" << endl;
+    return;
+}
+
+/*N^2*O(longN)*/
+void solve_3(int n, int m, const vector<int> &k)
+{
+    vector<int> k34;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            k34.push_back(k[i] + k[j]);
+
+    sort(k34.begin(), k34.end());
+
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++){
+            if (binary_search_recursion(k34, 0, k34.size()-1, m-k[i]+k[j]) != -1){
+                cout << "Yes" << endl;
+                return;
+            }
+        }
+
+    cout << "No" << endl;
+    return;
+}
+
+int main()
+{
+    int n = 0, m = 0;
+    vector<int> k;
+
+    input_data(&n, &m, k);
+
+    solve_1(n, m, k);
+
+    sort(k.begin(), k.end());
+    solve_2(n, m, k);
+
+    solve_3(n, m, k);
+
+    return 0;
+}

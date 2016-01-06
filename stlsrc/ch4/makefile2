@@ -1,0 +1,7 @@
+list_test:list_test.o
+	g++ -o list_test list_test.o
+list_test.o : list_test.cpp
+	g++ -c list_test.cpp
+clean:
+	rm list_test.o list_test
+

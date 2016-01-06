@@ -1,0 +1,11 @@
+obj=main.o print.o show.o
+main:$(obj)
+	g++ -o main $(obj) 
+main.o:main.cpp 
+	g++ -c main.cpp
+print.o:print.cpp
+	g++ -c print.cpp
+show.o:show.cpp
+	g++ -c show.cpp
+clean:
+	rm main $(obj) 
