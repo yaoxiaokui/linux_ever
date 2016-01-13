@@ -7,9 +7,33 @@
 
 #include <iostream>
 #include <algorithm>
+#include <utility>
+#include <vector>
+#include <list>
+#include <functional>
 using namespace std;
 
 int main()
+{
+    list<int> l;
+    l.push_back(-3);
+    l.push_back(0);
+    l.push_back(3);
+    l.push_back(-2);
+    l.push_back(7);
+
+    list<int>::iterator result = find_if(l.begin(), l.end(), bind2nd(greater<int>(), 0));
+    if(result == l.end())
+        cout << "no element's value is greater than 0" << endl;
+    else
+        cout << "*result = " << *result << endl;
+
+
+    return 0;
+}
+
+
+int main0()
 {
     int A[] = {4, 1, 0, 3, 2, 0, 6};
     const int N = sizeof(A)/sizeof(int);
