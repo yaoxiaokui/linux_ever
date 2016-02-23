@@ -1,1 +1,2 @@
-this is my learning practice
+这是我平时学习的文件夹。
+内容包括数据结构和算法，竞赛题，C++，C++标准库，Makefile，多进程和多线程，Mysql数据库，Qt，网络编程练习，Shell编程等
