@@ -2,10 +2,10 @@
 	> File Name: practice_5.cpp
 	> Author: 
 	> Mail: 
-	> Created Time: 2016年02月24日 星期三 13时25分02秒
+	> Created Time: 2016�?2�?4�?星期�?13�?5�?2�?
  ************************************************************************/
 /*
-求下面数据类型的最大值和最小值是什么:
+求下面数据类型的最大值和最小值是什�?
 char, short, int, long, float, double, long double, unsigned
 */
 
@@ -13,7 +13,6 @@ char, short, int, long, float, double, long double, unsigned
 #include <limits>
 #include <climits>
 using namespace std;
-
 
 int main()
 {
