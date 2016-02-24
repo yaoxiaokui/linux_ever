@@ -53,13 +53,21 @@ int main(int argc, char *argv[])
     else{
         const char * oob_data = "abc";
         const char * normal_data = "123";
-//        send(sock, normal_data, strlen(normal_data), 0);
+
+        printf("send the normal_data: %s\n", normal_data);
+        send(sock, normal_data, strlen(normal_data), 0);
+
+        sleep(1);//发送延迟1秒，如果没有延迟的话，太快有时候会导致收不到oob_data
+        printf("send the oob_data: %s\n", oob_data);
         send(sock, oob_data, strlen(oob_data), MSG_OOB);
+
+        sleep(1);
+        printf("send the normal_data: %s\n", normal_data);
         send(sock, normal_data, strlen(normal_data), 0);
     }
-
+    
+    printf("send over...,按任意键退出\n");
     getchar();
-    printf("send over..\n");
     close(sock);
 
     return 0;
