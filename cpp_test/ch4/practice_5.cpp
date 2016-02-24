@@ -2,16 +2,16 @@
 	> File Name: practice_5.cpp
 	> Author: 
 	> Mail: 
-	> Created Time: 2016�?2�?4�?星期�?13�?5�?2�?
+	> Created Time: 2016???2???4???星期???13???5???2???
  ************************************************************************/
 /*
-求下面数据类型的最大值和最小值是什�?
+求下面数据类型的最大值和最小值是什???
 char, short, int, long, float, double, long double, unsigned
 */
 
 #include <iostream>
 #include <limits>
-#include <climits>
+//#include <climits>
 using namespace std;
 
 int main()
