@@ -28,7 +28,8 @@ int do_poll(int listenfd)
 
     struct pollfd clientfds[1024];
     int maxi;
-    int i;
+    char buf[1024];
+    int i, num;
     int nready;
 
     //添加监听文件描述符
@@ -85,7 +86,26 @@ int do_poll(int listenfd)
 
         //不是监听套接字就绪
         //处理客户连接，处理连接套接字
-        handle_connectin(clientfds, maxi);
+        //handle_connectin(clientfds, maxi);
+        memset(buf, 0, 1024);
+
+        for(i = 1; i <= maxi; ++i){
+            if(clientfds[i].fd < 0)
+                continue;
+            //测试连接套接字是否就绪可读
+            if(clientfds[i].revents & POLLIN){
+                //有消息则读取到buf中
+                num = read(clientfds[i].fd, buf, 1024);
+            
+                if(num == 0){
+                    close(clientfds[i].fd);
+                    clientfds[i].fd = -1;
+                    continue;
+                } 
+                printf("server read the data is : %s", buf);
+                write(clientfds[i].fd, buf, num);
+            }
+        }
     }
     
 }
