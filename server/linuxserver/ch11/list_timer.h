@@ -13,6 +13,8 @@
 
 #define BUFFER_SIZE 64
 
+class util_timer;
+
 //用户数据：客户端socket地址，socket文件描述符，读缓存和定时器
 struct client_data
 {
@@ -35,6 +37,7 @@ class util_timer
         util_timer* prev;
         util_timer* next;
 };
+
 
 //定时器链表类，升序，双向链表，有头结点和尾结点
 class sort_timer_lst
@@ -79,7 +82,7 @@ void sort_timer_lst::add_timer(util_timer* timer)
     if(timer->expire < head->expire){
         timer->next = head;
         timer->prev = NULL;
-        head->prev = time;
+        head->prev = timer;
         head = timer;
         return;
     }
@@ -165,7 +168,7 @@ void sort_timer_lst::tick()
         if(head){
             head->prev = NULL;
         }
-        delete timer;
+        delete tmp;
         tmp = head;
     }
 }
