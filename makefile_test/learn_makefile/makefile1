@@ -1,0 +1,15 @@
+CC=gcc #CC是变量，一般变量都是大写的
+EXEC=app
+SRCS=main.c 
+OBJS=$(SRCS:.c=.o)
+FLAGS1=-o
+FLAGS2=-c
+
+
+start1:$(OBJS)
+	$(CC) $(OBJS) $(FLAGS1) $(EXEC) 
+	@echo "-----ok----"
+$(OBJS):
+	$(CC) $(FLAGS2) $(SRCS) $(FLAGS1) $(OBJS)
+clean:
+	rm $(EXEC) $(OBJS)
