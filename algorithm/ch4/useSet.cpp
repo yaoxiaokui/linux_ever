@@ -45,6 +45,8 @@ int main()
         v.push_back(rand() % 10);
     printVector(v);
 
+    //使用insert函数
+    
     //将刚才随机生成的十个数字插入到set中
     for(int i = 0; i < 10; ++i)
         s.insert(v[i]);
@@ -55,6 +57,23 @@ int main()
     s.insert(s.end(), 19);
     printSet(s);
     
+    //使用find函数
+    set<int>::iterator it = s.find(19);
+    if(it == s.end())
+        cout << "not find 19" << endl;
+    else
+        cout << "*it = " << *it << endl;
+
+    //使用erase函数
+    int num = s.erase(19);
+    cout << "erase the 19, the 19's count is " << num << endl;
+
+    //再次使用find函数
+    it = s.find(19);
+    if(it == s.end())
+        cout << "not find 19" << endl;
+    else
+        cout << "*it = " << *it << endl;
 
 
     return 0;
