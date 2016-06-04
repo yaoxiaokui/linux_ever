@@ -9,7 +9,7 @@ package person;
 
 public class person
 {
-    void print(){
+    public void print(){
         System.out.println("person.print()....");
     }
 }
