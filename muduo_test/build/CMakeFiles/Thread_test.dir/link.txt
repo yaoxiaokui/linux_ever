@@ -1,0 +1,1 @@
+g++   -g -Wall    CMakeFiles/Thread_test.dir/Thread_test.cpp.o CMakeFiles/Thread_test.dir/Thread.cpp.o  -o bin/Thread_test -rdynamic -lpthread 

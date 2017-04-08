@@ -1,0 +1,51 @@
+/*************************************************************************
+	> File Name: luckySubstrings.cpp
+	> Author: 
+	> Mail: 
+	> Created Time: Thu 25 Aug 2016 09:04:25 PM CST
+ ************************************************************************/
+
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+
+void print(vector<string> & v)
+{
+    for(int i = 0; i < v.size(); ++i){
+        cout << v[i] << endl;
+    }
+}
+
+//获得所有的子串
+vector<string> getSubstrings(string & str)
+{
+    vector<string> v;
+    int len = str.size();
+
+    for(int i = 0; i < len; ++i){
+        string temp = "";
+        for(int j = i; j < len; ++j){
+            temp.push_back(str[j]);
+            v.push_back(temp);
+        }
+    }
+
+    return v;
+}
+
+
+int main()
+{
+    string str;
+
+    cout << "input the str: ";
+    cin >> str;
+
+    vector<string> substrings = getSubstrings(str);
+    print(substrings);
+
+
+    return 0;
+}

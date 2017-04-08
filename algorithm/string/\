@@ -1,0 +1,28 @@
+/*************************************************************************
+	> File Name: huiwenstring.cpp
+	> Author: 
+	> Mail: 
+	> Created Time: Tue 23 Aug 2016 09:17:41 AM CST
+ ************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+string fun(string & str)
+{
+
+
+
+}
+
+int main()
+{
+    cout << "Input the string: ";
+    string str;
+
+    while(getline(cin, str)){
+        cout << "string: " << str << endl;
+    }
+
+    return 0;
+}

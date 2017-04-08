@@ -1,0 +1,24 @@
+total 168
+drwxr-xr-x 2 root root  4096 May 30 17:31 ./
+drwxr-xr-x 4 root root  4096 May 27 15:30 ../
+-rw-r--r-- 1 root root   194 May 29 15:18 2.txt
+-rwxr-xr-x 1 root root 13443 May 29 14:14 clientReadv*
+-rw-r--r-- 1 root root  2400 May 29 14:14 clientReadv.c
+-rwxr-xr-x 1 root root  8990 May 27 16:18 dupClient*
+-rw-r--r-- 1 root root  1333 May 27 16:18 dupClient.c
+-rwxr-xr-x 1 root root  9141 May 27 16:18 dupServer*
+-rw-r--r-- 1 root root  1713 May 27 16:18 dupServer.c
+-rwxr-xr-x 1 root root 13341 May 29 15:17 ftpclient*
+-rw-r--r-- 1 root root  2129 May 29 15:25 ftpclient.c
+-rwxr-xr-x 1 root root 13503 May 29 16:04 ftpserver*
+-rw-r--r-- 1 root root  3045 May 29 16:04 ftpserver.c
+-rwxr-xr-x 1 root root  8761 May 30 17:30 mytee*
+-rw-r--r-- 1 root root  1489 May 30 17:30 mytee.c
+-rwxr-xr-x 1 root root  9201 May 27 15:45 pipe_test1*
+-rw-r--r-- 1 root root  1251 May 27 15:45 pipe_test1.c
+-rwxr-xr-x 1 root root 13711 May 29 13:57 serverWritev*
+-rw-r--r-- 1 root root  3700 May 29 14:17 serverWritev.c
+-rw-r--r-- 1 root root   194 May 29 16:07 t1.txt
+-rw-r--r-- 1 root root     0 May 30 17:31 tee.txt
+-rw-r--r-- 1 root root    16 May 29 16:07 test.txt
+-rw-r--r-- 1 root root    19 May 29 15:36 tx.txt

@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/linux_ever/muduo_test/09boostThread/Thread.cpp
+Thread.h
+/root/linux_ever/muduo_test/09boostThread/Thread.h
+iostream
+-
+
+/root/linux_ever/muduo_test/09boostThread/Thread.h
+pthread.h
+-
+boost/function.hpp
+-
+
+/root/linux_ever/muduo_test/09boostThread/Thread_test.cpp
+Thread.h
+/root/linux_ever/muduo_test/09boostThread/Thread.h
+boost/bind.hpp
+-
+unistd.h
+-
+iostream
+-
+
